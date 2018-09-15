@@ -1,7 +1,7 @@
 
 ## Which NFL Fanbase Had the Worst Week 1?
 
-Week 1 of the 2018 NFL season began on Thursday, September 9, and ended on Monday, September 11. This project scrapes every NFL team's subreddit between those dates and uses sentiment analysis to determine a "positivity" and "negativity" score for every individual comment. We then aggregate sentiment results on a per-team, per-post, per-comment, and per-word level, and rank each NFL team by its subreddit's *net positivity*. We also identify the specific posts which elicited the most positive and negative comments, as well as the most positive and negative comments themselves. Finally, we identify the words most commonly appearing in each NFL subreddit's positive and negative comments.
+This project scrapes every NFL team's subreddit - beginning at the game's start time and ending twenty-four hours later - and uses sentiment analysis to determine a "positivity" and "negativity" score for every individual comment. We then aggregate sentiment results on a per-team, per-post, per-comment, and per-word level, and rank each NFL team by its subreddit's *net positivity*. We also identify the specific posts which elicited the most positive and negative comments, as well as the most positive and negative comments themselves. Finally, we identify the words most commonly appearing in each NFL subreddit's positive and negative comments.
 
 A full description of the project can be found at [**saisenberg.com**](https://saisenberg.com/projects/nfl-week1.html).
 
