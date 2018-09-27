@@ -25,7 +25,15 @@ This code comprises the entirety of the project summary above.
 
 A few important notes:
 
-* Feel free to change the *start* and *end* scraping dates in the appropriate kernel. Be aware that PRAW can only scrape the one thousand most recent posts in a given subreddit.
+* Change the *week* variable in the appropriate kernel to change the week to scrape. 
+
+* Change the *mins_scrape* variable to change the number of minutes before the end of each game to scrape. 
+
+* Change the *hours_scrape* variable to change the number of hours after the start of each game to scrape.
+
+* Keep in mind that PRAW can only scrape the **one thousand** most recent posts in a given subreddit.
+
+Additionally:
 
 * If this is your first time scraping Reddit, make sure to set up an [app](https://www.reddit.com/prefs/apps).
 
