@@ -1,7 +1,7 @@
 
 ## Which NFL Fanbase Had the Worst Week 1?
 
-This project scrapes every NFL team's subreddit - beginning at the game's start time and ending twenty-four hours later - and uses sentiment analysis to determine a "positivity" and "negativity" score for every individual comment. We then aggregate sentiment results on a per-team, per-post, per-comment, and per-word level, and rank each NFL team by its subreddit's *net positivity*. We also identify the specific posts which elicited the most positive and negative comments, as well as the most positive and negative comments themselves. Finally, we identify the words most commonly appearing in each NFL subreddit's positive and negative comments.
+This project scrapes every NFL team's subreddit - beginning five minutes before each game's end time and ending twenty-four hours after the game's start - and uses sentiment analysis to determine a "positivity" and "negativity" score for every individual comment. We then aggregate sentiment results on a per-team, per-post, per-comment, and per-word level, and rank each NFL team by its subreddit's *net positivity*. We also identify the specific posts which elicited the most positive and negative comments, as well as the most positive and negative comments themselves. Finally, we identify the words most commonly appearing in each NFL subreddit's positive and negative comments.
 
 A full description of the project can be found at [**saisenberg.com**](https://saisenberg.com/projects/nfl-week1.html). To use the Shiny app of weekly fanbase sentiment, visit my [shinyapps.io](https://saisenberg.shinyapps.io/weekly-nfl-sentiment/) page.
 

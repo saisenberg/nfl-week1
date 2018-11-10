@@ -1,6 +1,7 @@
 server <- function(input, output, session){
   
-  res_v0 <- reactive(filter(res, Week %in% input$week_choice, 
+  res_v0 <- reactive(filter(res, 
+                            #Week %in% input$week_choice, 
                             Result %in% input$result_choice,
                             Margin >= input$margin_choice[1],
                             Margin <= input$margin_choice[2])) # filtered df for drop-down team list
@@ -20,7 +21,6 @@ server <- function(input, output, session){
   
   res_f2 <- reactive(
     filter(res_v0(), !(Team %in% input$team_choice),
-           Week %in% input$week_choice,
            Result %in% input$result_choice,
            Margin >= input$margin_choice[1],
            Margin <= input$margin_choice[2]
@@ -33,7 +33,7 @@ server <- function(input, output, session){
                                  Margin >= input$margin_choice[1],
                                  Margin <= input$margin_choice[2]) %>% 
                             group_by(Team) %>% 
-                            summarise(Positivity = mean(Positivity), Negativity = mean(Negativity)) %>% 
+                            summarise(Positivity = round(mean(Positivity),2), Negativity = round(mean(Negativity),2)) %>% 
                             mutate(Net.Positivity = Positivity - Negativity) %>% 
                             left_join(team_res[,c('Team', 'WinPct', 'WinPct_scale', 'PointSize')], by = 'Team')
   ) # reactive (team averages)
@@ -74,5 +74,9 @@ server <- function(input, output, session){
       rename('Net Pos.' = 'Net.Positivity', 'Oppt.' = 'Opponent', 'Pos.' = 'Positivity', 'Neg.' = 'Negativity') %>% 
       mutate('Margin' = Team.Score - Oppt.Score)
   }, options = list(pageLength = 10, lengthMenu = c(10, 25, 50))) # data_table
+  
+  output$readme <- renderText({
+    HTML(html_text)
+  })
   
 } # server

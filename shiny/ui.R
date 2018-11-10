@@ -16,7 +16,6 @@ ui <- fluidPage(
       sliderInput(inputId = 'margin_choice', label = 'Select Game Margin:', min = min(res$Margin), max = max(res$Margin), 
                   value = c(min, max), ticks = T, step = 1, post = 'pts')
       
-      
     ), # sidebarPanel
     
     mainPanel(
@@ -25,7 +24,8 @@ ui <- fluidPage(
                   
                   tabPanel(title = 'Weekly Sentiment', plotlyOutput(outputId = 'scatterplot')),
                   tabPanel(title = 'Team Averages', plotlyOutput(outputId = 'team_scatterplot')),
-                  tabPanel(title = 'Data Table', div(dataTableOutput('data_table'), style = 'font-size:80%'))
+                  tabPanel(title = 'Data Table', div(dataTableOutput('data_table'), style = 'font-size:80%')),
+                  tabPanel(title = 'README', htmlOutput(outputId = 'readme'))
                   
       ) # tabsetPanel
       
