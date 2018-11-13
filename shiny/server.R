@@ -1,13 +1,14 @@
 server <- function(input, output, session){
   
-  res_v0 <- reactive(filter(res, 
-                            #Week %in% input$week_choice, 
+  week_choices <- reactive(filter(res, Team %in% input$team_choice))
+  
+  res_v0 <- reactive(filter(res,
                             Result %in% input$result_choice,
                             Margin >= input$margin_choice[1],
                             Margin <= input$margin_choice[2])) # filtered df for drop-down team list
   observe(
-    {updatePickerInput(session = session, inputId = 'team_choice', choices = sort(unique(res_v0()$Team)), 
-                       selected = sort(unique(res_v0()$Team)))}
+    {updatePickerInput(session = session, inputId = 'week_choice', choices = sort(unique(week_choices()$Week)), 
+                       selected = sort(unique(week_choices()$Week)))}
   ) # observe for drop-down team list
   
   res_f1 <- reactive(
@@ -38,6 +39,14 @@ server <- function(input, output, session){
                             left_join(team_res[,c('Team', 'WinPct', 'WinPct_scale', 'PointSize')], by = 'Team')
   ) # reactive (team averages)
   
+  game_res_v0 <- reactive(games %>% 
+                            filter((Winner.Team %in% input$team_choice) | (Loser.Team %in% input$team_choice),
+                                   Week %in% input$week_choice,
+                                   Margin >= input$margin_choice[1],
+                                   Margin <= input$margin_choice[2]) %>% 
+                            dplyr::arrange(-Difference.Net.Pos) %>% 
+                            top_n(30, Difference.Net.Pos)
+  ) # reactive (polarizing games)
   
   team_res_f1 <- reactive(filter(team_res_v0(), Team %in% input$team_choice))
   team_res_f2 <- reactive(filter(team_res_v0(), !(Team %in% input$team_choice)))
@@ -66,6 +75,18 @@ server <- function(input, output, session){
       scale_size(guide = 'none')
     t2 <- t + geom_point(data=team_res_f2(), alpha=0.15)
     ggplotly(t2, tooltip = c('Team', 'WinPct', 'Positivity', 'Negativity'))
+  })
+  
+  output$game_barplot <- renderPlotly({
+    g <- ggplot(game_res_v0(), aes(x=reorder(gameID, -Difference.Net.Pos), y=Difference.Net.Pos, fill=Margin, Game.Result=Game.Result)) + 
+      theme_minimal() +
+      geom_bar(stat="identity", color="darkgreen") +
+      scale_fill_gradient2(low = muted('forestgreen'), high = 'forestgreen') +
+      theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+      xlab('Game') +
+      ylab('Difference') +
+      ggtitle('Difference between Winner and Loser Net Positivity')
+    ggplotly(g, tooltip = c('Game.Result', 'Difference.Net.Pos'))
   })
   
   output$data_table <- renderDataTable({

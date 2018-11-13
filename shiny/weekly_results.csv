@@ -8,7 +8,7 @@ Kansas City Chiefs,15.28,8.91,6.37,"W (38-28, LAC)",1
 Indianapolis Colts,16.43,10.41,6.02,"L (23-34, CIN)",1
 San Francisco 49ers,15.91,9.96,5.95,"L (16-24, MIN)",1
 Green Bay Packers,15.21,9.43,5.78,"W (24-23, CHI)",1
-Baltimore Ravens,15.09,9.91,5.18,"W (47-3, CLE)",1
+Baltimore Ravens,15.09,9.91,5.18,"W (47-3, BUF)",1
 Philadelphia Eagles,14.93,9.82,5.11,"W (18-12, ATL)",1
 Pittsburgh Steelers,15.5,10.57,4.93,"T (21-21, CLE)",1
 Los Angeles Rams,15.2,10.3,4.9,"W (33-13, OAK)",1
@@ -39,7 +39,7 @@ Chicago Bears,15.29,8.72,6.57,"W (24-17, SEA)",2
 Tampa Bay Buccaneers,15.59,9.23,6.36,"W (27-21, PHI)",2
 Tennessee Titans,15.83,9.83,6,"W (20-17, HOU)",2
 Dallas Cowboys,15.28,9.37,5.91,"W (20-13, NYG)",2
-San Francisco 49ers,14.83,10.24,4.59,"W (30-27, SF)",2
+San Francisco 49ers,14.83,10.24,4.59,"W (30-27, DET)",2
 Atlanta Falcons,15.25,11.14,4.11,"W (31-24, CAR)",2
 New Orleans Saints,15.23,11.46,3.77,"W (21-18, CLE)",2
 Denver Broncos,14.26,10.94,3.32,"W (20-19, OAK)",2
@@ -64,7 +64,7 @@ Houston Texans,12.68,13.44,-0.77,"L (17-20, TEN)",2
 Arizona Cardinals,11.71,14.42,-2.71,"L (0-34, LAR)",2
 Miami Dolphins,14.04,19.11,-5.07,"W (20-12, NYJ)",2
 Detroit Lions,19.33,7.67,11.66,"W (26-10, NE)",3
-Cleveland Browns,17.23,6.21,11.03,"W (21-17, NY)",3
+Cleveland Browns,17.23,6.21,11.03,"W (21-17, NYJ)",3
 Buffalo Bills,15.15,8.39,6.76,"W (27-6, MIN)",3
 Tennessee Titans,17.16,10.49,6.66,"W (9-6, JAC)",3
 Carolina Panthers,15.74,9.25,6.49,"W (31-21, CIN)",3
@@ -97,7 +97,7 @@ New York Jets,12.24,13.52,-1.28,"L (17-21, CLE)",3
 Jacksonville Jaguars,13.02,15.09,-2.07,"L (6-9, TEN)",3
 Los Angeles Rams,18.37,7.95,10.42,"W (38-31, MIN)",4
 Chicago Bears,16.29,8.3,8,"W (48-10, TB)",4
-Green Bay Packers,15.96,9.24,6.71,"W (22-0, GB)",4
+Green Bay Packers,15.96,9.24,6.71,"W (22-0, BUF)",4
 Tennessee Titans,15.64,9.38,6.25,"W (26-23, PHI)",4
 New Orleans Saints,15.16,8.97,6.2,"W (33-18, NYG)",4
 Dallas Cowboys,15.8,10.19,5.61,"W (26-24, DET)",4
